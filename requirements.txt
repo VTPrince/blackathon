@@ -140,7 +140,6 @@ multimethod==1.7
 multipledispatch==0.6.0
 multitasking==0.0.9
 murmurhash==1.0.6
-navigator-updater==0.2.1
 nbclient==0.5.10
 nbconvert==6.4.1
 nbformat==5.1.3
