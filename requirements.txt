@@ -25,7 +25,6 @@ chardet==3.0.4
 charset-normalizer==2.0.11
 click==8.0.3
 cloudpickle==2.0.0
-clyent==1.2.2
 colorama==0.4.4
 colorlover==0.3.0
 comtypes==1.1.7
