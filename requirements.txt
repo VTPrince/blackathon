@@ -28,10 +28,6 @@ cloudpickle==2.0.0
 colorama==0.4.4
 colorlover==0.3.0
 comtypes==1.1.7
-conda==4.11.0
-conda-build==3.18.11
-conda-package-handling==1.7.3
-conda-verify==3.4.2
 contextlib2==0.6.0.post1
 convertdate==2.3.2
 cryptography==2.8
