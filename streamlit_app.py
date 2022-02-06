@@ -1,9 +1,9 @@
 import pickle
 from sympy import Ge, Rel
 import streamlit as st
-import pandas as pd
-import streamlit.components.v1 as components
+import pandas as pd 
 from pycaret import classification
+import streamlit.components.v1 as components
 model = classification.load_model(model_name='gbc')
 def predict(Country,Location,Cellphone,Age,Gender,Relation,Marital,Education,Job):
     if Country=="Kenya":
@@ -83,15 +83,13 @@ def predict(Country,Location,Cellphone,Age,Gender,Relation,Marital,Education,Job
     values=[Country,Location,Cellphone,Age,Gender,Relation,Marital,Education,Job]
     ###features = [float(i) for i in values]
     ###array_features = [np.array(features)]
-    prediction = model.predict(values)
-    if(prediction == 3):
-        st.text("You are safe,there are very low chances of the wildfire reaching your city ")
-    elif(prediction == 2):
-        st.text("You might be in danger as the wilfire is expected to reach you in 7-10 days, you must prepare to evacuate")
-    elif(prediction == 1):
-        st.text("You are in danger, the wildfire is expected to reach within 3-7 days,you must evacuate")
+    df=pd.DataFrame([values],columns=['country','location_type','cellphone_access','age_of_respondent','gender_of_respondent','relationship_with_head','marital_status','education_level','job_type'])
+    prediction = model.predict(df)
+    if(prediction == 0):
+        st.text("You have very little chances of opening a bank account in your country")
+        st.text("You could try to improve your job type and/or your education level ")
     else:
-        st.text("Immediate Danger, wildfire might reach your city within 1-3 days, evacuate now!")
+        st.text("You have higher chances of opening a bank account")
 
 def main():
 
