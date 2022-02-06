@@ -1,5 +1,4 @@
 import pickle
-from sympy import Ge, Rel
 import streamlit as st
 import pandas as pd 
 from pycaret import classification
